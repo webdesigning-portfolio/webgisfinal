@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Layers Control Tutorial - Leaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		#map {
+			width: 750px;
+			height: 300px;
+		}
+
+	</style>
+
+	
+</head>
+<body>
+
+<div id='map'></div>
+<script>
+var greenIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+
+	var govtschools = L.layerGroup();
+
+	var mmpp = L.marker([17.442164672419427, 78.38784475936012],{icon: greenIcon}).bindPopup('this is govt mpp primary school').addTo(govtschools),
+		mzphs = L.marker([17.44142771320209, 78.38687916414919],{icon: greenIcon}).bindPopup('this zphs').addTo(govtschools),
+		mgovt = L.marker([17.448879052538175, 78.39067717197884],{icon: greenIcon}).bindPopup('govtsch').addTo(govtschools),
+		mgs = L.marker([17.448919993121862, 78.39076300266424],{icon: greenIcon}).bindPopup('gs').addTo(govtschools);
+                mhitech = L.marker([17.46966222019651, 78.38474352902082],{icon: greenIcon}).bindPopup('hitech govtschool').addTo(govtschools);
+                mhighschool = L.marker([17.4561531592084, 78.39845354381163],{icon: greenIcon}).bindPopup('highschool').addTo(govtschools);
+
+
+
+var orangeIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+
+var pvtschools = L.layerGroup();
+
+	var mdf = L.marker([17.450839854478907, 78.39154507018844],{icon: orangeIcon}).bindPopup('this is govt mpp primary school').addTo(pvtschools),
+		mvfg = L.marker([17.453850531454293, 78.38741805092944],{icon: orangeIcon}).bindPopup('this zphs').addTo(pvtschools),
+		mdfc = L.marker([17.44389194858948, 78.3910595385109],{icon: orangeIcon}).bindPopup('govtsch').addTo(pvtschools),
+		mdbb = L.marker([17.444355150553186, 78.39725006739943],{icon: orangeIcon}).bindPopup('gs').addTo(pvtschools);
+var clgs = L.layerGroup();
+
+	var mdf = L.marker([17.4393094587893, 78.39415897493403]).bindPopup('this is govt mpp primary school').addTo(clgs),
+		mvfg = L.marker([17.438163058550842, 78.39321483739445]).bindPopup('this zphs').addTo(clgs),
+		mdfc = L.marker([17.45760994375558, 78.38952411792158]).bindPopup('govtsch').addTo(clgs),
+		mdbb = L.marker([17.452901940839872, 78.39712013358087]).bindPopup('gs').addTo(clgs);
+
+
+	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+
+	var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr}),
+		streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+
+	var map = L.map('map', {
+		center: [17.448919993121862, 78.390763002664249],
+		zoom: 30,
+		layers: [grayscale, govtschools]
+	});
+
+	var baseLayers = {
+		"Grayscale": grayscale,
+		"Streets": streets
+	};
+
+	var overlays = {
+		"Govtschools": govtschools,
+                 "Pvt schools": pvtschools,
+                 "clgs": clgs
+	};
+
+	var layerControl = L.control.layers(baseLayers, overlays).addTo(map);
+</script>
+
+
+
+</body>
+</html>

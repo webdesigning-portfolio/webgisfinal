@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Quick Start - Leaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+
+	
+</head>
+<body>
+
+
+
+<div id="mapid" style="width: 600px; height: 400px;"></div>
+<script>
+
+	var mymap = L.map('mapid').setView([17.384291380676146, 78.53110012725028], 20);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
+
+	L.circle([17.384291380676146, 78.53110012725028], 500, {
+		color: 'red',
+		fillColor: '#f03',
+		
+	}).addTo(mymap);
+
+var greenIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+
+	L.marker([17.38427256983994, 78.53118655338969],{icon: greenIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src=https://images.radio.com/aiu-media/manhole-cover-0-a3b6b19c-e37e-4a02-afbb-b01faf3bd840.jpg?width=800 height=50 width=50>").openPopup();
+
+
+	L.marker([17.386678268700084, 78.52935767378224],{icon: greenIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src=https://images.radio.com/aiu-media/manhole-cover-0-a3b6b19c-e37e-4a02-afbb-b01faf3bd840.jpg?width=800 height=50 width=50>").openPopup();
+
+L.marker([17.38718856690833, 78.53035337350225],{icon: greenIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src=https://images.radio.com/aiu-media/manhole-cover-0-a3b6b19c-e37e-4a02-afbb-b01faf3bd840.jpg?width=800 height=50 width=50>").openPopup();
+
+L.marker([17.383234143082163, 78.5282504253545],{icon: greenIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src=https://images.radio.com/aiu-media/manhole-cover-0-a3b6b19c-e37e-4a02-afbb-b01faf3bd840.jpg?width=800 height=50 width=50>").openPopup();
+
+L.marker([17.384814947190584, 78.52755469049131],{icon: greenIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src=https://images.radio.com/aiu-media/manhole-cover-0-a3b6b19c-e37e-4a02-afbb-b01faf3bd840.jpg?width=800 height=50 width=50>").openPopup();
+
+L.marker([17.38669085334547, 78.52917803235093],{icon: greenIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src=https://images.radio.com/aiu-media/manhole-cover-0-a3b6b19c-e37e-4a02-afbb-b01faf3bd840.jpg?width=800 height=50 width=50>").openPopup();
+
+L.marker([17.386353571773324, 78.53434630495154],{icon: greenIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src=https://images.radio.com/aiu-media/manhole-cover-0-a3b6b19c-e37e-4a02-afbb-b01faf3bd840.jpg?width=800 height=50 width=50>").openPopup();
+
+L.marker([17.38065050120823, 78.52878484980494],{icon: greenIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src=https://images.radio.com/aiu-media/manhole-cover-0-a3b6b19c-e37e-4a02-afbb-b01faf3bd840.jpg?width=800 height=50 width=50>").openPopup();
+
+L.marker([17.381622532493648, 78.53051767106652],{icon: greenIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src=https://images.radio.com/aiu-media/manhole-cover-0-a3b6b19c-e37e-4a02-afbb-b01faf3bd840.jpg?width=800 height=50 width=50>").openPopup();
+
+L.marker([17.385566630623416, 78.52997999781375],{icon: greenIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src=https://images.radio.com/aiu-media/manhole-cover-0-a3b6b19c-e37e-4a02-afbb-b01faf3bd840.jpg?width=800 height=50 width=50>").openPopup();
+
+L.marker([17.384657692828107, 78.52678431671676],{icon: greenIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src=https://images.radio.com/aiu-media/manhole-cover-0-a3b6b19c-e37e-4a02-afbb-b01faf3bd840.jpg?width=800 height=50 width=50>").openPopup();
+
+	L.marker([17.38472795120216, 78.52943300477894],{icon: greenIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src=https://images.radio.com/aiu-media/manhole-cover-0-a3b6b19c-e37e-4a02-afbb-b01faf3bd840.jpg?width=800 height=50 width=50>").openPopup();
+
+	L.marker([17.387429375317755, 78.53185368939371],{icon: greenIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src=https://images.radio.com/aiu-media/manhole-cover-0-a3b6b19c-e37e-4a02-afbb-b01faf3bd840.jpg?width=800 height=50 width=50>").openPopup();
+
+	L.marker([17.38631851476357, 78.53137748261983],{icon: greenIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src=https://images.radio.com/aiu-media/manhole-cover-0-a3b6b19c-e37e-4a02-afbb-b01faf3bd840.jpg?width=800 height=50 width=50>").openPopup();
+
+	L.marker([17.386192264959174, 78.53330874149894],{icon: greenIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src=https://images.radio.com/aiu-media/manhole-cover-0-a3b6b19c-e37e-4a02-afbb-b01faf3bd840.jpg?width=800 height=50 width=50>").openPopup();
+
+
+
+var redIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+
+		L.marker([17.386364885186268, 78.52751993270545],{icon: redIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src =https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/07/12/847372-manhole-1.jpg height=50 width=50 >").openPopup();
+
+
+		L.marker([17.38669012916658, 78.53384795686829],{icon: redIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src =https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/07/12/847372-manhole-1.jpg height=50 width=50 >").openPopup(); 
+
+
+		L.marker([17.3875989946851, 78.53076584032415],{icon: redIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src =https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/07/12/847372-manhole-1.jpg height=50 width=50 >").openPopup(); 
+
+
+		L.marker([17.383231240598636, 78.52751183903727],{icon: redIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src =https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/07/12/847372-manhole-1.jpg height=50 width=50 >").openPopup(); 
+
+
+		L.marker([17.38788, 78.52956],{icon: redIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src =https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/07/12/847372-manhole-1.jpg height=50 width=50 >").openPopup(); 
+
+
+
+		L.marker([17.38588221999123, 78.53031611531435],{icon: redIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src =https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/07/12/847372-manhole-1.jpg height=50 width=50 >").openPopup(); 
+
+
+		L.marker([17.382625313697503, 78.52896691817595],{icon: redIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src =https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/07/12/847372-manhole-1.jpg height=50 width=50 >").openPopup(); 
+
+
+
+
+
+
+
+
+var orangeIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+		
+
+L.marker([17.386757431462968, 78.5334235183906],{icon: orangeIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src = https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/12/28/Pictures/_cd20736a-298d-11ea-822c-9a9bb451da23.jpg height=50 width=50 >").openPopup(); 
+
+L.marker([17.385446513242695, 78.52775349740912],{icon: orangeIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src = https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/12/28/Pictures/_cd20736a-298d-11ea-822c-9a9bb451da23.jpg height=50 width=50 >").openPopup(); 
+
+L.marker([17.385404632464972, 78.52767437288801],{icon: orangeIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src = https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/12/28/Pictures/_cd20736a-298d-11ea-822c-9a9bb451da23.jpg height=50 width=50 >").openPopup(); 
+
+L.marker([17.387155462322898, 78.52866142093191],{icon: orangeIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src = https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/12/28/Pictures/_cd20736a-298d-11ea-822c-9a9bb451da23.jpg height=50 width=50 >").openPopup(); 
+
+L.marker([17.38532271713193, 78.53164405212152],{icon: orangeIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src = https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/12/28/Pictures/_cd20736a-298d-11ea-822c-9a9bb451da23.jpg height=50 width=50 >").openPopup(); 
+
+L.marker([17.381626522945837, 78.52946609231412],{icon: orangeIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src =https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/12/28/Pictures/_cd20736a-298d-11ea-822c-9a9bb451da23.jpg height=50 width=50 >").openPopup(); 
+
+
+
+L.marker([17.38768184837272, 78.53141717187412],{icon: orangeIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src =https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/12/28/Pictures/_cd20736a-298d-11ea-822c-9a9bb451da23.jpg height=50 width=50 >").openPopup(); 
+
+
+L.marker([17.387492494581373, 78.53186692030145],{icon: orangeIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src =https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/12/28/Pictures/_cd20736a-298d-11ea-822c-9a9bb451da23.jpg height=50 width=50 >").openPopup(); 
+
+
+L.marker([17.387416756106745, 78.53102033383547],{icon: orangeIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src =https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/12/28/Pictures/_cd20736a-298d-11ea-822c-9a9bb451da23.jpg height=50 width=50 >").openPopup(); 
+
+
+L.marker([17.384230607074603, 78.53138214932746],{icon: orangeIcon}).addTo(mymap)
+		.bindPopup("<br /> <img src = https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/12/28/Pictures/_cd20736a-298d-11ea-822c-9a9bb451da23.jpg height=50 width=50 >").openPopup(); 
+
+	mymap.on('click', onMapClick);
+
+</script>
+
+
+
+</body>
+</html>
